@@ -16,9 +16,9 @@ const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
         autoCorrect={false}
         // detect when user end input
         onEndEditing={onTermSubmit}
-        // onChangeText={(newTerm) => onTermChange(newTerm)}
+        onChangeText={(newTerm) => onTermChange(newTerm)}
         // other way to do that use reference explain at section 8 no 98
-        onChangeText={onTermChange}
+        // onChangeText={onTermChange}
       />
     </View>
   );
