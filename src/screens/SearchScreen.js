@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import SearchBar from "../components/SearchBar";
+import ResultList from "../components/ResultList";
 import useResults from "../hooks/useResults";
 
 const SearchScreen = () => {
   const [term, setTerm] = useState("");
   const [errorMessage, searchAPI, results] = useResults();
-
   // section 10 104 move to hooks/useResults
 
   // const [results, setResults] = useState([]);
@@ -45,6 +45,12 @@ const SearchScreen = () => {
 
   // caled searchAPI imediately after screenr rendered are BAD CODE
 
+  // section 10 108
+  const filterResultsByPrice = (price) => {
+    return results.filter((result) => {
+      return result.price === price;
+    });
+  };
   return (
     <View>
       <SearchBar
@@ -60,6 +66,9 @@ const SearchScreen = () => {
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <Text>We have found {results.length} results</Text>
+      <ResultList title="Cost effective" results={filterResultsByPrice("$")} />
+      <ResultList title="Bit Pricer" results={filterResultsByPrice("$$")} />
+      <ResultList title="Big Spender" results={filterResultsByPrice("$$$")} />
     </View>
   );
 };
