@@ -3,9 +3,11 @@ import { View, Text, StyleSheet, FlatList } from "react-native";
 import ResultDetail from "./ResultDetail";
 const ResultList = ({ title, results }) => {
   return (
-    <View>
-      <Text style={styles.title}>{title}</Text>
-      <Text>result: {results.length}</Text>
+    <View sytle={styles.container}>
+      <View style={styles.text}>
+        <Text style={styles.title}>{title}</Text>
+        {/* <Text>result: {results.length}</Text> */}
+      </View>
       <FlatList
         horizontal={true}
         data={results}
@@ -23,6 +25,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "bold",
+    marginBottom: 5,
+    marginTop: 5,
+  },
+  text: {
+    marginHorizontal: 10,
+  },
+  container: {
+    marginBottom: 10,
   },
 });
 
