@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import yelp from "../api/yelp";
 
+// section 10 103
+/**
+ * useEffect(()=>{}) meaning run arrow function every time component is rendered
+ * useEffect(()=>{},[]) meaning run arrow function only when component first render
+ * useEffect(()=>{},[value]) meaning run arrow function only when the component is first render, and when the 'value' changes
+ * similar with mounted in vue
+ */
+
 export default () => {
   const [results, setResults] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
