@@ -19,6 +19,7 @@ export default () => {
       setErrorMessage("Something went wrong");
     }
   };
+  // only call useEffect one time []
   useEffect(() => {
     searchAPI("pasta");
   }, []);

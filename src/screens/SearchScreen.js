@@ -52,7 +52,8 @@ const SearchScreen = () => {
     });
   };
   return (
-    <View>
+    // section 11 113 make it height fill screen
+    <>
       <SearchBar
         term={term}
         onTermChange={(newTerm) => {
@@ -65,7 +66,6 @@ const SearchScreen = () => {
         // onTermSubmit={searchAPI}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-      <Text>We have found {results.length} results</Text>
       <ScrollView>
         <ResultList
           title="Cost effective"
@@ -74,7 +74,7 @@ const SearchScreen = () => {
         <ResultList title="Bit Pricer" results={filterResultsByPrice("$$")} />
         <ResultList title="Big Spender" results={filterResultsByPrice("$$$")} />
       </ScrollView>
-    </View>
+    </>
   );
 };
 

@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "flex-start",
     flexDirection: "row",
+    marginBottom: 10,
   },
   inputStyle: {
     fontSize: 18,
